@@ -62,8 +62,8 @@ const CaptureMobileImageWrapper = styled.div`
   padding: 4vw;
   display: flex;
   flex-direction: column;
-  gap: 10vw;
-  justify-content: space-between;
+  gap: 5vw;
+  /* justify-content: space-between; */
   header {
     border: 1px solid black;
     display: flex;
@@ -89,7 +89,7 @@ const CaptureMobileImageWrapper = styled.div`
     border: 1px solid black;
     display: flex;
     justify-content: center;
-    margin-bottom: 5vw;
+    margin-bottom: 0vw;
     .captureImage {
       background-color: #212121;
       width: 90%;
