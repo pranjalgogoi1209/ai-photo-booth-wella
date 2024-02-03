@@ -30,7 +30,7 @@ export default function HomeMobile() {
             <Link to={"/select-gender"}>
               <button className="startNow">Start Now</button>
             </Link>
-            <Link to={"https://techkilla.com/ai-photobooth"}>
+            <Link to={"https://techkilla.com/ai-photo-booth"}>
               <button className="knowMore">Know More</button>
             </Link>
           </div>
