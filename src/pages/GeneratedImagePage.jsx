@@ -21,7 +21,7 @@ export default function GeneratedImagePage({ generatedImage }) {
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-        <h1>Select Your Gender</h1>
+        <h1>Your AI Generated Image</h1>
       </header>
 
       {generatedImage ? (
