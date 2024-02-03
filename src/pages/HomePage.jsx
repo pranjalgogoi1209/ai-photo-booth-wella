@@ -6,9 +6,9 @@ import styled from "styled-components";
 export default function HomePage() {
   return (
     <HomeWrapper>
-      <div className="desktop">
+      {/*       <div className="desktop">
         <HomeDesktop />
-      </div>
+      </div> */}
 
       <div className="mobile">
         <HomeMobile />
@@ -18,7 +18,7 @@ export default function HomePage() {
 }
 
 const HomeWrapper = styled.div`
-  @media screen and (max-width: 1025px) {
+  /*  @media screen and (max-width: 1025px) {
     .desktop {
       display: none;
     }
@@ -28,5 +28,5 @@ const HomeWrapper = styled.div`
     .mobile {
       display: none;
     }
-  }
+  } */
 `;

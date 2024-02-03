@@ -6,6 +6,7 @@
 }
 
 body {
+  background-image: url("./assets/mobile-bg.png");
   /* background: url("./../src/assets/pc-background-image.png"); */
   background-position: center;
   background-size: cover;
@@ -15,11 +16,11 @@ body {
   /* border: 3px solid darkmagenta; */
 }
 
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
   body {
-    /* background-image: url("./assets/mobile-bg.png"); */
+    background-image: url("./assets/mobile-bg.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
-}
+} */

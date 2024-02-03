@@ -31,7 +31,7 @@ export default function HomeDesktop() {
       {/* main starts here */}
       <main>
         <div className="buttons">
-          <Link to={"/capture-image"}>
+          <Link to={"/select-gender"}>
             <button className="startNow">Start Now</button>
           </Link>
           <Link to={"https://techkilla.com/ai-photobooth"}>

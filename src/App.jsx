@@ -5,6 +5,7 @@ import CaptureImagePage from "./pages/CaptureImagePage";
 import KnowMorePage from "./pages/KnowMorePage";
 import AvatarPage from "./pages/AvatarPage";
 import GeneratedImagePage from "./pages/GeneratedImagePage";
+import SelectGender from "./pages/SelectGender";
 
 export default function App() {
   const [capturedImage, setCapturedImg] = useState();
@@ -13,6 +14,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/select-gender" element={<SelectGender />} />
         <Route
           path="/capture-image"
           element={<CaptureImagePage setCapturedImg={setCapturedImg} />}

@@ -23,7 +23,7 @@ export default function HomeMobile() {
         <section className="upper">
           <h1>AI Photobooth Generator</h1>
           <div className="buttons">
-            <Link to={"/capture-image"}>
+            <Link to={"/select-gender"}>
               <button className="startNow">Start Now</button>
             </Link>
             <Link to={"https://techkilla.com/ai-photobooth"}>
@@ -90,12 +90,12 @@ const HomeMobileWrapper = styled.div`
     border: 1px solid purple;
     display: flex;
     flex-direction: column;
-    gap: 3vh;
+    gap: 5vw;
     .upper {
       border: 1px solid black;
       display: flex;
       flex-direction: column;
-      gap: 3vh;
+      gap: 3vw;
       h1 {
         font-size: 6.5vw;
         text-align: center;
@@ -139,7 +139,7 @@ const HomeMobileWrapper = styled.div`
       flex-direction: column;
       gap: 3vw;
       img {
-        transition: scale ease 0.5s;
+        transition: all ease 0.5s;
       }
       img:hover {
         transform: scale(1.05);
