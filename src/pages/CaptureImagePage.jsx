@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-import CaptureMobileImage from "../components/captureImage/mobile/captureMobileImage";
+import CaptureMobileImage from "../components/captureImage/mobile/CaptureMobileImage";
 import { Link } from "react-router-dom";
 
 export default function CaptureImagePage({ setCapturedImg }) {
