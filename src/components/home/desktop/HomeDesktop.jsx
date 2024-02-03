@@ -3,15 +3,15 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logo from "./../../../assets/logo.png";
 import {
-  freedomFighter01,
-  freedomFighter02,
-  freedomFighter03,
-  freedomFighter04,
-  freedomFighter05,
-  freedomFighter06,
-  freedomFighter07,
-  freedomFighter08,
-  freedomFighter09,
+  femaleCard01,
+  femaleCard02,
+  femaleCard03,
+  femaleCard04,
+  femaleCard05,
+  femaleCard06,
+  femaleCard07,
+  femaleCard08,
+  femaleCard09,
 } from "./../../../assets/home-page/index";
 
 export default function HomeDesktop() {

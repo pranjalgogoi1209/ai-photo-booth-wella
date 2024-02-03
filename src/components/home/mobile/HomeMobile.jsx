@@ -4,21 +4,25 @@ import { Link } from "react-router-dom";
 import logo from "./../../../assets/logo.png";
 import mobileBg from "./../../../assets/mobile-bg.png";
 import {
-  freedomFighter01,
-  freedomFighter02,
-  freedomFighter03,
-  freedomFighter04,
-  freedomFighter05,
-  freedomFighter06,
-  freedomFighter07,
-  freedomFighter08,
-  freedomFighter09,
+  femaleCard01,
+  femaleCard02,
+  femaleCard03,
+  femaleCard04,
+  femaleCard05,
+  femaleCard06,
+  femaleCard07,
+  femaleCard08,
+  femaleCard09,
 } from "./../../../assets/home-page/index";
 
 export default function HomeMobile() {
   return (
     <HomeMobileWrapper>
-      <header>logo</header>
+      <header>
+        <div className="logo">
+          <img src={logo} alt="logo" />
+        </div>
+      </header>
       <main>
         <section className="upper">
           <h1>AI Photobooth Generator</h1>
@@ -36,36 +40,36 @@ export default function HomeMobile() {
           {/* first container */}
           <div className="firstContainer">
             <div className="imgContainer1 imgCnt">
-              <img src={freedomFighter08} alt="img1" />
+              <img src={femaleCard02} alt="img1" />
             </div>
             <div className="imgContainer2 imgCnt">
-              <img src={freedomFighter05} alt="img2" />
+              <img src={femaleCard09} alt="img2" />
             </div>
           </div>
 
           {/* second container */}
           <div className="secondContainer">
             <div className="imgContainer">
-              <img src={freedomFighter05} alt="img3" />
+              <img src={femaleCard03} alt="img3" />
             </div>
             <div className="imgContainer">
-              <img src={freedomFighter05} alt="img4" />
+              <img src={femaleCard04} alt="img4" />
             </div>
             <div className="imgContainer">
-              <img src={freedomFighter05} alt="img5" />
+              <img src={femaleCard05} alt="img5" />
             </div>
           </div>
 
           {/* third container */}
           <div className="thirdContainer">
             <div className="imgContainer">
-              <img src={freedomFighter05} alt="img6" />
+              <img src={femaleCard08} alt="img6" />
             </div>
             <div className="imgContainer">
-              <img src={freedomFighter05} alt="img7" />
+              <img src={femaleCard01} alt="img7" />
             </div>
             <div className="imgContainer">
-              <img src={freedomFighter05} alt="img8" />
+              <img src={femaleCard07} alt="img8" />
             </div>
           </div>
         </section>
@@ -75,24 +79,32 @@ export default function HomeMobile() {
 }
 
 const HomeMobileWrapper = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 100%;
   padding: 4vw;
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  gap: 1vh;
   /* align-items: center; */
   /* header */
   header {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
+    .logo {
+      margin: 0 auto;
+      width: 20vw;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
   main {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     display: flex;
     flex-direction: column;
     gap: 5vw;
     .upper {
-      border: 1px solid black;
+      /* border: 1px solid black; */
       display: flex;
       flex-direction: column;
       gap: 3vw;
@@ -102,7 +114,7 @@ const HomeMobileWrapper = styled.div`
         font-weight: 600;
       }
       .buttons {
-        border: 1px solid red;
+        /* border: 1px solid red; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -125,7 +137,8 @@ const HomeMobileWrapper = styled.div`
           }
         }
         .startNow {
-          background-color: #fcb017;
+          background-color: #c72041;
+          color: #f1f1f1;
         }
         .knowMore {
           border: 0.1vw solid black;
@@ -134,7 +147,7 @@ const HomeMobileWrapper = styled.div`
       }
     }
     .lower {
-      border: 1px solid black;
+      /* border: 1px solid black; */
       display: flex;
       flex-direction: column;
       gap: 3vw;
@@ -164,7 +177,7 @@ const HomeMobileWrapper = styled.div`
             border-radius: 3vw;
             height: 100%;
             width: 100%;
-            box-shadow: 0.7vw 0.7vw 0.6vw rgba(0, 0, 0, 0.5);
+            box-shadow: 0.5vw 0.5vw 0.5vw rgba(0, 0, 0, 0.5);
             border: 0.2vw solid #fff;
           }
         }
@@ -181,7 +194,7 @@ const HomeMobileWrapper = styled.div`
             border-radius: 3vw;
             height: 100%;
             width: 100%;
-            box-shadow: 0.7vw 0.7vw 0.6vw rgba(0, 0, 0, 0.5);
+            box-shadow: 0.5vw 0.5vw 0.5vw rgba(0, 0, 0, 0.5);
             border: 0.2vw solid #fff;
           }
         }
@@ -199,7 +212,7 @@ const HomeMobileWrapper = styled.div`
             border-radius: 3vw;
             height: 100%;
             width: 100%;
-            box-shadow: 0.7vw 0.7vw 0.6vw rgba(0, 0, 0, 0.5);
+            box-shadow: 0.5vw 0.5vw 0.5vw rgba(0, 0, 0, 0.5);
             border: 0.15vw solid #fff;
           }
         }
