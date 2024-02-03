@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import exportAsImage from "../utils/exportAsImage";
 import logo from "./../assets/logo.png";
@@ -18,18 +17,13 @@ export default function GeneratedImagePage({ generatedImage }) {
 
   return (
     <GeneratedImageWrapper>
-      {/* header starts here */}
       <header>
-        <div className="title">
-          <h1>Download Your Image</h1>
-        </div>
         <div className="logo">
-          <Link to={"/"}>
-            <img src={logo} alt="logo" />
-          </Link>
+          <img src={logo} alt="logo" />
         </div>
+        <h1>Select Your Gender</h1>
       </header>
-      {/* header ends here */}
+
       {generatedImage ? (
         <div className="generatedImageContainer">
           <div className="generatedImageParent" ref={exportRef}>
@@ -38,15 +32,24 @@ export default function GeneratedImagePage({ generatedImage }) {
               alt="generated image"
               className="generatedImage"
             />
-            <img src={frame} alt="generated image frame" className="frame" />
           </div>
-          <button
-            onClick={() =>
-              exportAsImage(exportRef.current, "ai-photobooth-freedom-fighter")
-            }
-          >
-            Download
-          </button>
+          <div className="buttons">
+            {/* print feature */}
+            <button>Print</button>
+
+            {/* email feature */}
+            <button>Email</button>
+            <button
+              onClick={() =>
+                exportAsImage(
+                  exportRef.current,
+                  "ai-photobooth-freedom-fighter"
+                )
+              }
+            >
+              Download
+            </button>
+          </div>
         </div>
       ) : (
         <div className="loading">
@@ -63,58 +66,49 @@ export default function GeneratedImagePage({ generatedImage }) {
 }
 
 const GeneratedImageWrapper = styled.div`
+  /* border: 1px solid red; */
   height: 100vh;
+  padding: 4vw;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* border: 1px solid black; */
-
-  /* header starts here */
+  gap: 5vw;
   header {
     /* border: 1px solid black; */
     display: flex;
-    justify-content: space-between;
-    .title {
-      /* border: 1px solid red; */
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-left: 10vw;
-      h1 {
-        border: 0.15vw solid black;
-        padding: 0.1vw 0.4vw;
-        font-size: 3vw;
-        font-weight: 600;
-        border-radius: 0.7vw;
-      }
-    }
+    flex-direction: column;
+    gap: 3vw;
     .logo {
-      width: 10vw;
-      height: 10vw;
-      /* border: 1px solid red; */
+      margin: 0 auto;
+      width: 20vw;
       img {
         width: 100%;
         height: 100%;
       }
     }
+    h1 {
+      /* border: 1px solid black; */
+      font-size: 6.5vw;
+      text-align: center;
+      font-weight: 600;
+    }
   }
-  /* header ends here */
   .generatedImageContainer {
     /* border: 1px solid black; */
+    /* height: 150vw; */
     display: flex;
     flex-direction: column;
-    gap: 4vw;
+    gap: 10vw;
     margin-top: 3vw;
+    justify-content: space-between;
     .generatedImageParent {
       /* border: 1px solid black; */
       margin: 0 auto;
-      width: 40vh;
-      position: relative;
+      width: 80vw;
+      /* position: relative; */
       .generatedImage {
-        width: 100%;
+        width: 100.3%;
         height: 100%;
-        box-shadow: 0.2vh 0.2vh 0.8vh rgba(0, 0, 0, 0.5);
+        box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.6);
         /* border-radius: 3.5vh; */
       }
       .frame {
@@ -126,23 +120,31 @@ const GeneratedImageWrapper = styled.div`
       }
     }
 
-    button {
-      border: none;
-      outline: none;
-      padding: 0.5vw 2vw;
-      font-weight: 600;
-      font-size: 1.5vw;
-      border-radius: 0.6vw;
-      cursor: pointer;
-      background-color: #fcb017;
-      margin: 0 auto;
-      display: block;
-      box-shadow: 0.1vw 0.1vw 0.4vw rgba(0, 0, 0, 0.5);
-      transform: translateY(-0.1vw);
-      transition: all ease 0.5s;
-      &:hover {
-        box-shadow: none;
-        transform: translateY(0);
+    /* border: 1px solid black; */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 3vw;
+      button {
+        width: 27%;
+        text-align: center;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        padding: 2vw 0;
+        font-size: 4vw;
+        font-weight: 600;
+        border-radius: 1vw;
+        cursor: pointer;
+        box-shadow: 0.3vw 0.3vw 0.8vw rgba(0, 0, 0, 0.5);
+        transform: translateY(-0.4vw);
+        transition: all ease 0.5s;
+        background-color: #c72041;
+        color: #f1f1f1;
+        &:hover {
+          box-shadow: none;
+          transform: translateY(0);
+        }
       }
     }
   }

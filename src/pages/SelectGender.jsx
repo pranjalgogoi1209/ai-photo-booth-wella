@@ -4,14 +4,35 @@ import styled from "styled-components";
 import { BiMale } from "react-icons/bi";
 import { BiFemale } from "react-icons/bi";
 import logo from "./../assets/logo.png";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function SelectGender({ setSelectedGender }) {
+export default function SelectGender({ setSelectedGender, selectedGender }) {
+  const navigate = useNavigate();
   const [selectedGenderIndex, setSelectedGenderIndex] = useState();
 
   const data = [
     { gender: "Male", img: "#", icon: <BiMale />, color: "#6083ce" },
     { gender: "Female", img: "#", icon: <BiFemale />, color: "#fcbbc5" },
   ];
+
+  // toast options
+  const toastOptions = {
+    position: "top-left",
+    autoClose: 4000,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  };
+
+  const handleSubmit = () => {
+    if (selectedGender) {
+      navigate("/capture-image");
+    } else {
+      toast.error("Please select your gender", toastOptions);
+    }
+  };
   return (
     <SelectGenderWrapper>
       <header>
@@ -44,11 +65,10 @@ export default function SelectGender({ setSelectedGender }) {
         ))}
       </div>
 
-      <div className="submit">
-        <Link to={"/capture-image"}>
-          <button>Submit</button>
-        </Link>
+      <div className="submit" onClick={handleSubmit}>
+        <button>Submit</button>
       </div>
+      <ToastContainer />
     </SelectGenderWrapper>
   );
 }

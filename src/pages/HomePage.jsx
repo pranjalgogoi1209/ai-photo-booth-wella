@@ -6,7 +6,7 @@ import styled from "styled-components";
 export default function HomePage() {
   return (
     <HomeWrapper>
-      {/*       <div className="desktop">
+      {/*<div className="desktop">
         <HomeDesktop />
       </div> */}
 

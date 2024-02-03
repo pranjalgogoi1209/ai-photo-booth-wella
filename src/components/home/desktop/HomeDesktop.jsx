@@ -3,14 +3,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logo from "./../../../assets/logo.png";
 import {
-  femaleCard01,
+  maleCard03,
+  maleCard02,
+  maleCard04,
+  maleCard06,
   femaleCard02,
   femaleCard03,
-  femaleCard04,
-  femaleCard05,
-  femaleCard06,
   femaleCard07,
-  femaleCard08,
   femaleCard09,
 } from "./../../../assets/home-page/index";
 

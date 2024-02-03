@@ -17,7 +17,12 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route
           path="/select-gender"
-          element={<SelectGender setSelectedGender={setSelectedGender} />}
+          element={
+            <SelectGender
+              setSelectedGender={setSelectedGender}
+              selectedGender={selectedGender}
+            />
+          }
         />
         <Route
           path="/capture-image"
