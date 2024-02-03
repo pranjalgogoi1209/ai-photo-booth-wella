@@ -95,16 +95,18 @@ const CaptureMobileImageWrapper = styled.div`
       width: 90%;
       /* height: 70vw; */
       border: 2vw solid #c72041;
+      border-bottom: 1.2vw solid #c72041;
       border-radius: 3vw;
       .webcamParent {
         position: relative;
-        height: 100%;
+        /* height: 100%; */
         width: 100%;
+        overflow: hidden;
         #webcam {
           border-radius: 1vw;
           margin: 0 auto;
           width: 100.3%;
-          /* height: 90%; */
+          /* height: 100.3%; */
           /* object-fit: cover; */
         }
         .capturedImage {
@@ -112,7 +114,7 @@ const CaptureMobileImageWrapper = styled.div`
           top: 0;
           left: 0;
           width: 100.3%;
-          /* height: 100%; */
+          /* height: 99%; */
         }
       }
     }

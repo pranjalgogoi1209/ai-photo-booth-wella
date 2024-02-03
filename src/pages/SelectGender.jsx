@@ -27,6 +27,7 @@ export default function SelectGender({ setSelectedGender, selectedGender }) {
   };
 
   const handleSubmit = () => {
+    console.log("selectedGender", selectedGender);
     if (selectedGender) {
       navigate("/capture-image");
     } else {
@@ -49,18 +50,15 @@ export default function SelectGender({ setSelectedGender, selectedGender }) {
             className={`genderContainer ${
               index === selectedGenderIndex ? "selectedGender" : ""
             }`}
-            onClick={() => setSelectedGenderIndex(index)}
+            onClick={() => {
+              setSelectedGenderIndex(index);
+              setSelectedGender(item.gender);
+            }}
           >
             <div className="icon" style={{ color: `${item.color}` }}>
               {item.icon}
             </div>
-            <button
-              onClick={() => {
-                setSelectedGender(item.gender);
-              }}
-            >
-              {item.gender}
-            </button>
+            <button>{item.gender}</button>
           </div>
         ))}
       </div>
