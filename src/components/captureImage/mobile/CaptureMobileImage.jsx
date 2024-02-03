@@ -57,14 +57,15 @@ export default function CaptureMobileImage({ handleSubmit, setImg, img }) {
 }
 
 const CaptureMobileImageWrapper = styled.div`
+  /* border: 1px solid black; */
   height: 100vh;
   padding: 4vw;
   display: flex;
   flex-direction: column;
-  gap: 15vw;
+  gap: 10vw;
   justify-content: space-between;
   header {
-    /* border: 1px solid black; */
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     gap: 3vw;
@@ -85,12 +86,13 @@ const CaptureMobileImageWrapper = styled.div`
   }
 
   main {
-    /* border: 1px solid black; */
+    border: 1px solid black;
     display: flex;
     justify-content: center;
+    margin-bottom: 5vw;
     .captureImage {
       background-color: #212121;
-      width: 100%;
+      width: 90%;
       /* height: 70vw; */
       border: 2vw solid #212121;
       border-radius: 3vw;
