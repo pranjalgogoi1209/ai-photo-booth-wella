@@ -91,7 +91,7 @@ const AvatarMobileWrapper = styled.div`
   padding: 4vw;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   gap: 5vw;
   /* align-items: center; */
   header {
@@ -101,7 +101,7 @@ const AvatarMobileWrapper = styled.div`
     gap: 3vw;
     .logo {
       margin: 0 auto;
-      width: 20vw;
+      width: 12vw;
       img {
         width: 100%;
         height: 100%;
@@ -188,20 +188,18 @@ const AvatarMobileWrapper = styled.div`
   footer {
     /* border: 1px solid purple; */
     button {
+      width: 100%;
       border: none;
       outline: none;
-      padding: 2vw 0;
-      font-weight: 600;
-      font-size: 3vw;
-      border-radius: 0.6vw;
       cursor: pointer;
+      padding: 2vw 0;
       background-color: #c72041;
       color: #f1f1f1;
-      /* margin: 0 auto;
-      display: block; */
-      width: 100%;
+      font-weight: 600;
+      font-size: 5vw;
+      border-radius: 1vw;
       box-shadow: 0.3vw 0.3vw 0.8vw rgba(0, 0, 0, 0.5);
-      transform: translateY(-0.1vw);
+      transform: translateY(-0.4vw);
       transition: all ease 0.5s;
       &:hover {
         box-shadow: none;

@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import AvatarMobile from "../components/avatar/mobile/AvatarMobile";
-import { femaleCards } from "../utils/constants";
+import { maleCards, femaleCards } from "../utils/constants";
 
 export default function AvatarPage({
   capturedImage,
@@ -53,6 +53,7 @@ export default function AvatarPage({
     <AvatarPageWrapper>
       <div className="mobile">
         <AvatarMobile
+          maleCards={maleCards}
           femaleCards={femaleCards}
           selectedGender={selectedGender}
           handleSubmit={handleSubmit}

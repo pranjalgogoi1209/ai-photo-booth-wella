@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import logo from "./../../../assets/logo.png";
 
 import {
-  femaleCard01,
+  maleCard03,
+  maleCard02,
+  maleCard04,
+  maleCard06,
   femaleCard02,
   femaleCard03,
-  femaleCard04,
-  femaleCard05,
-  femaleCard06,
   femaleCard07,
-  femaleCard08,
   femaleCard09,
 } from "./../../../assets/home-page/index";
 
@@ -25,17 +24,6 @@ export default function HomeMobile() {
         <h1>AI Photobooth Generator</h1>
       </header>
 
-      <section className="upper">
-        <div className="buttons">
-          <Link to={"/select-gender"}>
-            <button className="startNow">Start Now</button>
-          </Link>
-          <Link to={"https://techkilla.com/ai-photo-booth"}>
-            <button className="knowMore">Know More</button>
-          </Link>
-        </div>
-      </section>
-
       <main>
         {/* first container */}
         <div className="firstContainer">
@@ -43,7 +31,7 @@ export default function HomeMobile() {
             <img src={femaleCard02} alt="img1" />
           </div>
           <div className="imgContainer2 imgCnt">
-            <img src={femaleCard09} alt="img2" />
+            <img src={maleCard04} alt="img2" />
           </div>
         </div>
 
@@ -53,26 +41,37 @@ export default function HomeMobile() {
             <img src={femaleCard03} alt="img3" />
           </div>
           <div className="imgContainer">
-            <img src={femaleCard04} alt="img4" />
+            <img src={maleCard02} alt="img4" />
           </div>
           <div className="imgContainer">
-            <img src={femaleCard05} alt="img5" />
+            <img src={femaleCard07} alt="img5" />
           </div>
         </div>
 
         {/* third container */}
         <div className="thirdContainer">
           <div className="imgContainer">
-            <img src={femaleCard08} alt="img6" />
+            <img src={maleCard03} alt="img6" />
           </div>
           <div className="imgContainer">
-            <img src={femaleCard01} alt="img7" />
+            <img src={femaleCard09} alt="img7" />
           </div>
           <div className="imgContainer">
-            <img src={femaleCard07} alt="img8" />
+            <img src={maleCard06} alt="img8" />
           </div>
         </div>
       </main>
+
+      <section className="lower">
+        <div className="buttons">
+          <Link to={"/select-gender"}>
+            <button className="startNow">Start Now</button>
+          </Link>
+          {/* <Link to={"https://techkilla.com/ai-photo-booth"}>
+            <button className="knowMore">Know More</button>
+          </Link> */}
+        </div>
+      </section>
     </HomeMobileWrapper>
   );
 }
@@ -108,45 +107,7 @@ const HomeMobileWrapper = styled.div`
       font-weight: 600;
     }
   }
-  .upper {
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: column;
-    gap: 3vw;
 
-    .buttons {
-      /* border: 1px solid red; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 3vw;
-      .startNow,
-      .knowMore {
-        border: none;
-        outline: none;
-        padding: 1vw 2.5vw;
-        font-weight: 600;
-        font-size: 5vw;
-        border-radius: 1vw;
-        cursor: pointer;
-        box-shadow: 0.3vw 0.3vw 0.8vw rgba(0, 0, 0, 0.5);
-        transform: translateY(-0.4vw);
-        transition: all ease 0.5s;
-        &:hover {
-          box-shadow: none;
-          transform: translateY(0);
-        }
-      }
-      .startNow {
-        background-color: #c72041;
-        color: #f1f1f1;
-      }
-      .knowMore {
-        border: 0.1vw solid black;
-        background-color: transparent;
-      }
-    }
-  }
   main {
     /* border: 1px solid black; */
     display: flex;
@@ -217,6 +178,44 @@ const HomeMobileWrapper = styled.div`
           border: 0.15vw solid #fff;
         }
       }
+    }
+  }
+  .lower {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+
+    .buttons {
+      /* border: 1px solid red; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .startNow,
+      .knowMore {
+        border: none;
+        outline: none;
+        padding: 1vw 2.5vw;
+        font-weight: 600;
+        font-size: 5vw;
+        border-radius: 1vw;
+        cursor: pointer;
+        box-shadow: 0.3vw 0.3vw 0.8vw rgba(0, 0, 0, 0.5);
+        transform: translateY(-0.4vw);
+        transition: all ease 0.5s;
+        &:hover {
+          box-shadow: none;
+          transform: translateY(0);
+        }
+      }
+      .startNow {
+        background-color: #c72041;
+        color: #f1f1f1;
+      }
+      /*   .knowMore {
+        border: 0.1vw solid black;
+        background-color: transparent;
+      } */
     }
   }
 `;

@@ -28,13 +28,13 @@ export default function SelectGender({ setSelectedGender }) {
             className={`genderContainer ${
               index === selectedGenderIndex ? "selectedGender" : ""
             }`}
+            onClick={() => setSelectedGenderIndex(index)}
           >
             <div className="icon" style={{ color: `${item.color}` }}>
               {item.icon}
             </div>
             <button
               onClick={() => {
-                setSelectedGenderIndex(index);
                 setSelectedGender(item.gender);
               }}
             >
@@ -60,7 +60,7 @@ const SelectGenderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15vw;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   button {
     border: none;
     outline: none;
@@ -101,6 +101,7 @@ const SelectGenderWrapper = styled.div`
     display: flex;
     justify-content: center;
     gap: 10vw;
+    margin-bottom: 20vw;
     .genderContainer {
       /* border: 1px solid black; */
       display: flex;
@@ -134,15 +135,21 @@ const SelectGenderWrapper = styled.div`
 
   .submit {
     /* border: 1px solid black; */
-    /* margin-top: 20vw; */
-
-    margin: 0 auto;
+    width: 100%;
     button {
-      height: 100%;
-      padding: 2vw 6vw;
-      border-radius: 7vw;
-      font-size: 7vw;
-      /* width: 100%; */
+      border: none;
+      outline: none;
+      padding: 2vw 0;
+      background-color: #c72041;
+      color: #f1f1f1;
+      width: 100%;
+      font-weight: 600;
+      font-size: 5vw;
+      border-radius: 1vw;
+      cursor: pointer;
+      box-shadow: 0.3vw 0.3vw 0.8vw rgba(0, 0, 0, 0.5);
+      transform: translateY(-0.4vw);
+      transition: all ease 0.5s;
       &:hover {
         box-shadow: none;
         transform: translateY(0);
