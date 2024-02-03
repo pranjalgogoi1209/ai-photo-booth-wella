@@ -20,7 +20,7 @@ export default function AvatarPage({
   selectedGender && console.log(selectedGender);
   // toast options
   const toastOptions = {
-    position: "bottom-left",
+    position: "top-left",
     autoClose: 4000,
     pauseOnHover: true,
     draggable: true,

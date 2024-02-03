@@ -19,6 +19,7 @@ export default function CaptureImagePage({ setCapturedImg }) {
   };
 
   const handleSubmit = () => {
+    console.log("captured image submitting");
     if (img) {
       /* setCapturedImg(`data:image/webp;base64,${img}`); */
       setCapturedImg(img);
@@ -34,6 +35,7 @@ export default function CaptureImagePage({ setCapturedImg }) {
         setImg={setImg}
         handleSubmit={handleSubmit}
       />
+      <ToastContainer />
     </div>
   );
 }
