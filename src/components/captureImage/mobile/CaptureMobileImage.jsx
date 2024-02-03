@@ -114,6 +114,7 @@ const CaptureMobileImageWrapper = styled.div`
           top: 0;
           left: 0;
           width: 100.3%;
+          border-radius: 1vw;
           /* height: 99%; */
         }
       }
