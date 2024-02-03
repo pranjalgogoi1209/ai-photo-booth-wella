@@ -91,7 +91,8 @@ const AvatarMobileWrapper = styled.div`
   padding: 4vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 5vw;
+  /* justify-content: space-between; */
   gap: 5vw;
   /* align-items: center; */
   header {
