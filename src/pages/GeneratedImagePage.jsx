@@ -105,9 +105,10 @@ const GeneratedImageWrapper = styled.div`
       margin: 0 auto;
       width: 80vw;
       /* position: relative; */
+      background-color: #000;
       .generatedImage {
         width: 100.3%;
-        height: 100%;
+        height: 100.3%;
         box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.6);
         /* border-radius: 3.5vh; */
       }
