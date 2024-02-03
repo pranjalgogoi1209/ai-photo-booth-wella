@@ -97,6 +97,7 @@ const HomeMobileWrapper = styled.div`
       flex-direction: column;
       gap: 3vh;
       h1 {
+        font-size: 6.5vw;
         text-align: center;
         font-weight: 600;
       }
@@ -105,18 +106,18 @@ const HomeMobileWrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1vw;
+        gap: 3vw;
         .startNow,
         .knowMore {
           border: none;
           outline: none;
-          padding: 0.5vw 2vw;
+          padding: 1vw 2.5vw;
           font-weight: 600;
-          font-size: 4vw;
-          border-radius: 0.6vw;
+          font-size: 5vw;
+          border-radius: 1vw;
           cursor: pointer;
-          box-shadow: 0.1vw 0.1vw 0.4vw rgba(0, 0, 0, 0.5);
-          transform: translateY(-0.1vw);
+          box-shadow: 0.3vw 0.3vw 0.8vw rgba(0, 0, 0, 0.5);
+          transform: translateY(-0.4vw);
           transition: all ease 0.5s;
           &:hover {
             box-shadow: none;
@@ -137,6 +138,12 @@ const HomeMobileWrapper = styled.div`
       display: flex;
       flex-direction: column;
       gap: 3vw;
+      img {
+        transition: scale ease 0.5s;
+      }
+      img:hover {
+        transform: scale(1.05);
+      }
       /* first container */
       .firstContainer {
         display: flex;
@@ -151,12 +158,14 @@ const HomeMobileWrapper = styled.div`
           /* height: 37vw; */
         }
         .imgCnt {
-          border: 1px solid black;
+          /* border: 1px solid black; */
           border-radius: 3vw;
           img {
             border-radius: 3vw;
             height: 100%;
             width: 100%;
+            box-shadow: 0.7vw 0.7vw 0.6vw rgba(0, 0, 0, 0.5);
+            border: 0.2vw solid #fff;
           }
         }
       }
@@ -172,6 +181,8 @@ const HomeMobileWrapper = styled.div`
             border-radius: 3vw;
             height: 100%;
             width: 100%;
+            box-shadow: 0.7vw 0.7vw 0.6vw rgba(0, 0, 0, 0.5);
+            border: 0.2vw solid #fff;
           }
         }
       }
@@ -188,6 +199,8 @@ const HomeMobileWrapper = styled.div`
             border-radius: 3vw;
             height: 100%;
             width: 100%;
+            box-shadow: 0.7vw 0.7vw 0.6vw rgba(0, 0, 0, 0.5);
+            border: 0.15vw solid #fff;
           }
         }
       }

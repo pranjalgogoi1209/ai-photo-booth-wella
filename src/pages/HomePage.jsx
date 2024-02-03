@@ -18,13 +18,13 @@ export default function HomePage() {
 }
 
 const HomeWrapper = styled.div`
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 1025px) {
     .desktop {
       display: none;
     }
   }
 
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 1025px) {
     .mobile {
       display: none;
     }
