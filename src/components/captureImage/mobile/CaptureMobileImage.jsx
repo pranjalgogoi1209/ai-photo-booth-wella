@@ -126,7 +126,7 @@ const CaptureMobileImageWrapper = styled.div`
     justify-content: center;
     gap: 6vw;
     button {
-      width: 50%;
+      width: 42%;
       text-align: center;
       border: none;
       background-color: transparent;
