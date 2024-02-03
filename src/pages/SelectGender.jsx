@@ -2,22 +2,23 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BiMale } from "react-icons/bi";
-import { FaFemale } from "react-icons/fa";
+import { BiFemale } from "react-icons/bi";
+import logo from "./../assets/logo.png";
 
-export default function SelectGender() {
+export default function SelectGender({ setSelectedGender }) {
   const [selectedGenderIndex, setSelectedGenderIndex] = useState();
-  const [selectedGender, setSelectedGender] = useState();
+
   const data = [
-    { gender: "male", img: "#", icon: <BiMale />, color: "purple" },
-    { gender: "female", img: "#", icon: <FaFemale />, color: "pink" },
+    { gender: "Male", img: "#", icon: <BiMale />, color: "#6083ce" },
+    { gender: "Female", img: "#", icon: <BiFemale />, color: "#fcbbc5" },
   ];
   return (
     <SelectGenderWrapper>
       <header>
         <div className="logo">
-          <img src="#" alt="logo" />
-          <h1>Select Your Gender</h1>
+          <img src={logo} alt="logo" />
         </div>
+        <h1>Select Your Gender</h1>
       </header>
 
       <div className="gender">
@@ -43,15 +44,23 @@ export default function SelectGender() {
         ))}
       </div>
 
-      <Link to={"/capture-image"} className="submit">
-        <button>Submit</button>
-      </Link>
+      <div className="submit">
+        <Link to={"/capture-image"}>
+          <button>Submit</button>
+        </Link>
+      </div>
     </SelectGenderWrapper>
   );
 }
 
 const SelectGenderWrapper = styled.div`
+  /* border: 1px solid red; */
+  height: 100vh;
   padding: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 15vw;
+  /* justify-content: space-between; */
   button {
     border: none;
     outline: none;
@@ -63,23 +72,37 @@ const SelectGenderWrapper = styled.div`
     box-shadow: 0.3vw 0.3vw 0.8vw rgba(0, 0, 0, 0.5);
     transform: translateY(-0.4vw);
     transition: all ease 0.5s;
-    /*  &:hover {
-      box-shadow: none;
-      transform: translateY(0);
-    } */
-    background-color: #fcb017;
+
+    background-color: #c72041;
+    color: #f1f1f1;
   }
   header {
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
+    gap: 3vw;
+    .logo {
+      margin: 0 auto;
+      width: 20vw;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    h1 {
+      /* border: 1px solid black; */
+      font-size: 6.5vw;
+      text-align: center;
+      font-weight: 600;
+    }
   }
   .gender {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     gap: 10vw;
     .genderContainer {
-      border: 1px solid black;
+      /* border: 1px solid black; */
       display: flex;
       flex-direction: column;
       gap: 4vw;
@@ -87,14 +110,20 @@ const SelectGenderWrapper = styled.div`
       .icon {
         display: flex;
         align-items: center;
-        border: 1px solid black;
-        font-size: 25vw;
+        border: 2px solid black;
+        border-radius: 4vw;
+        font-size: 30vw;
+        padding: 4vw 2.5vw;
         transition: background ease 0.5s;
+      }
+      button {
+        width: 100%;
       }
     }
     .selectedGender {
       .icon {
-        background-color: #fcb017;
+        background-color: #c72041;
+        border-color: transparent;
       }
       button {
         box-shadow: none;
@@ -104,5 +133,20 @@ const SelectGenderWrapper = styled.div`
   }
 
   .submit {
+    /* border: 1px solid black; */
+    /* margin-top: 20vw; */
+
+    margin: 0 auto;
+    button {
+      height: 100%;
+      padding: 2vw 6vw;
+      border-radius: 7vw;
+      font-size: 7vw;
+      /* width: 100%; */
+      &:hover {
+        box-shadow: none;
+        transform: translateY(0);
+      }
+    }
   }
 `;

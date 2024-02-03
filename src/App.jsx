@@ -10,11 +10,15 @@ import SelectGender from "./pages/SelectGender";
 export default function App() {
   const [capturedImage, setCapturedImg] = useState();
   const [generatedImage, setGeneratedImage] = useState();
+  const [selectedGender, setSelectedGender] = useState();
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/select-gender" element={<SelectGender />} />
+        <Route
+          path="/select-gender"
+          element={<SelectGender setSelectedGender={setSelectedGender} />}
+        />
         <Route
           path="/capture-image"
           element={<CaptureImagePage setCapturedImg={setCapturedImg} />}
@@ -26,6 +30,7 @@ export default function App() {
             <AvatarPage
               capturedImage={capturedImage}
               setGeneratedImage={setGeneratedImage}
+              selectedGender={selectedGender}
             />
           }
         />
