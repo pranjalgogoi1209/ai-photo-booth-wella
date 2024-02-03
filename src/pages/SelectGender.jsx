@@ -119,7 +119,7 @@ const SelectGenderWrapper = styled.div`
     display: flex;
     justify-content: center;
     gap: 10vw;
-    margin-bottom: 20vw;
+    /* margin-bottom: 10vw; */
     .genderContainer {
       /* border: 1px solid black; */
       display: flex;
@@ -153,17 +153,19 @@ const SelectGenderWrapper = styled.div`
 
   .submit {
     /* border: 1px solid black; */
-    width: 100%;
+    /* width: 100%; */
+
+    margin: 0 auto;
     button {
       border: none;
       outline: none;
-      padding: 2vw 0;
+      padding: 2vw 6vw;
       background-color: #c72041;
       color: #f1f1f1;
-      width: 100%;
+      /* width: 100%; */
       font-weight: 600;
       font-size: 5vw;
-      border-radius: 1vw;
+      border-radius: 2vw;
       cursor: pointer;
       box-shadow: 0.3vw 0.3vw 0.8vw rgba(0, 0, 0, 0.5);
       transform: translateY(-0.4vw);

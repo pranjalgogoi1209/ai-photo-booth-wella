@@ -187,6 +187,7 @@ const AvatarMobileWrapper = styled.div`
     }
   }
   footer {
+    margin-bottom: 5vw;
     /* border: 1px solid purple; */
     button {
       width: 100%;
