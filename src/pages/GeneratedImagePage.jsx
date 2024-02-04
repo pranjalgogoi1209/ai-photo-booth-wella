@@ -4,10 +4,12 @@ import exportAsImage from "../utils/exportAsImage";
 import logo from "./../assets/logo.png";
 import frame from "./../assets/generated-image-frame.png";
 import { useReactToPrint } from "react-to-print";
+import EmailFeature from "../components/modal/EmailFeature";
 
 export default function GeneratedImagePage({ generatedImage }) {
   const exportRef = useRef();
   const printRef = useRef();
+  const [isEmailOpen, setIsEmailOpen] = useState(false);
   generatedImage && console.log(generatedImage);
 
   // window.print();
@@ -15,8 +17,21 @@ export default function GeneratedImagePage({ generatedImage }) {
     content: () => printRef.current,
   });
 
+  const handleEmail = () => {
+    console.log("clicked on Email Button");
+    setIsEmailOpen(true);
+  };
+
   return (
     <GeneratedImageWrapper>
+      {/* email feature */}
+      {isEmailOpen && (
+        <EmailFeature
+          setIsEmailOpen={setIsEmailOpen}
+          generatedImage={generatedImage}
+          className="EmailFeature"
+        />
+      )}
       <header>
         <div className="logo">
           <img src={logo} alt="logo" />
@@ -39,7 +54,7 @@ export default function GeneratedImagePage({ generatedImage }) {
             <button onClick={handlePrint}>Print</button>
 
             {/* email feature */}
-            <button>Email</button>
+            <button onClick={handleEmail}>Email</button>
             <button
               onClick={() =>
                 exportAsImage(
@@ -73,6 +88,10 @@ const GeneratedImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5vw;
+  .EmailFeature {
+    height: 100%;
+    position: absolute;
+  }
   header {
     /* border: 1px solid black; */
     display: flex;
