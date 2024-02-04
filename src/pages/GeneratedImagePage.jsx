@@ -3,17 +3,17 @@ import styled from "styled-components";
 import exportAsImage from "../utils/exportAsImage";
 import logo from "./../assets/logo.png";
 import frame from "./../assets/generated-image-frame.png";
+import { useReactToPrint } from "react-to-print";
 
 export default function GeneratedImagePage({ generatedImage }) {
   const exportRef = useRef();
-  //   const [isLoading, setIsLoading] = useState(false);
+  const printRef = useRef();
   generatedImage && console.log(generatedImage);
 
-  /* useEffect(() => {
-    if (generatedImage) {
-      setIsLoading(true);
-    }
-  }, [generatedImage]); */
+  // window.print();
+  const handlePrint = useReactToPrint({
+    content: () => printRef.current,
+  });
 
   return (
     <GeneratedImageWrapper>
@@ -31,11 +31,12 @@ export default function GeneratedImagePage({ generatedImage }) {
               src={generatedImage}
               alt="generated image"
               className="generatedImage"
+              ref={printRef}
             />
           </div>
           <div className="buttons">
             {/* print feature */}
-            <button>Print</button>
+            <button onClick={handlePrint}>Print</button>
 
             {/* email feature */}
             <button>Email</button>

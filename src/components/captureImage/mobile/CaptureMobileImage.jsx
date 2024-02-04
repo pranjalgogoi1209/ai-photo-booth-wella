@@ -26,7 +26,7 @@ export default function CaptureMobileImage({ handleSubmit, setImg, img }) {
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-        <h1>Select Your Gender</h1>
+        <h1>Capture Your Face</h1>
       </header>
 
       <main>
