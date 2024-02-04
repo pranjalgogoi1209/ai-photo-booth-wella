@@ -36,12 +36,18 @@ export default function App() {
               capturedImage={capturedImage}
               setGeneratedImage={setGeneratedImage}
               selectedGender={selectedGender}
+              generatedImage={generatedImage}
             />
           }
         />
         <Route
           path="/generated-image"
-          element={<GeneratedImagePage generatedImage={generatedImage} />}
+          element={
+            <GeneratedImagePage
+              generatedImage={generatedImage}
+              selectedGender={selectedGender}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

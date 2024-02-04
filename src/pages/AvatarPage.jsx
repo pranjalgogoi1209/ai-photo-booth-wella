@@ -11,12 +11,13 @@ export default function AvatarPage({
   capturedImage,
   setGeneratedImage,
   selectedGender,
+  generatedImage,
 }) {
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState();
-  capturedImage && console.log("capturedImage =>", capturedImage.split(",")[1]);
-  selectedImage && console.log("selectedImage =>", selectedImage.split(",")[1]);
-
+  /*   capturedImage && console.log("capturedImage =>", capturedImage.split(",")[1]); */
+  // selectedImage && console.log("selectedImage =>", selectedImage.split(",")[1]);
+  /*  console.log("actual=>", maleCardsActual, femaleCardsActual); */
   selectedGender && console.log(selectedGender);
   // toast options
   const toastOptions = {
@@ -39,6 +40,8 @@ export default function AvatarPage({
         })
         .then(function (response) {
           console.log(response);
+          // getScaleImage()
+
           setGeneratedImage(`data:image/webp;base64,${response.data.result}`);
         })
         .catch(function (error) {
@@ -58,6 +61,7 @@ export default function AvatarPage({
           selectedGender={selectedGender}
           handleSubmit={handleSubmit}
           setSelectedImage={setSelectedImage}
+          generatedImage={generatedImage}
         />
       </div>
       <ToastContainer />

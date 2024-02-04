@@ -5,22 +5,53 @@ import logo from "./../assets/logo.png";
 import frame from "./../assets/generated-image-frame.png";
 import { useReactToPrint } from "react-to-print";
 import EmailFeature from "../components/modal/EmailFeature";
+import { Link } from "react-router-dom";
 
-export default function GeneratedImagePage({ generatedImage }) {
+export default function GeneratedImagePage({ generatedImage, selectedGender }) {
   const exportRef = useRef();
   const printRef = useRef();
   const [isEmailOpen, setIsEmailOpen] = useState(false);
   generatedImage && console.log(generatedImage);
+  const [printImage, setPrintImage] = useState();
 
+  // handlePrint
   // window.print();
   const handlePrint = useReactToPrint({
     content: () => printRef.current,
   });
 
+  // handle Email
   const handleEmail = () => {
     console.log("clicked on Email Button");
     setIsEmailOpen(true);
   };
+
+  useEffect(() => {
+    if (generatedImage) {
+      const img = new Image();
+      img.onload = function () {
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        if (selectedGender.toLowerCase() === "female") {
+          canvas.width = img.width * 1;
+          canvas.height = img.height * 1.06;
+        } else if (selectedGender.toLowerCase() === "male") {
+          canvas.width = img.width * 1.1;
+          canvas.height = img.height * 1.035;
+        }
+        /*  else {
+          canvas.width = img.width * 1.1;
+          canvas.height = img.height * 1.0339;
+        } */
+
+        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+        const scaledImage = canvas.toDataURL("image/png");
+        setPrintImage(scaledImage);
+      };
+
+      img.src = generatedImage;
+    }
+  }, [generatedImage]);
 
   return (
     <GeneratedImageWrapper>
@@ -33,17 +64,17 @@ export default function GeneratedImagePage({ generatedImage }) {
         />
       )}
       <header>
-        <div className="logo">
+        <Link to={"/"} className="logo">
           <img src={logo} alt="logo" />
-        </div>
+        </Link>
         <h1>AI Generated Image</h1>
       </header>
 
-      {generatedImage ? (
+      {printImage ? (
         <div className="generatedImageContainer">
           <div className="generatedImageParent" ref={exportRef}>
             <img
-              src={generatedImage}
+              src={printImage}
               alt="generated image"
               className="generatedImage"
               ref={printRef}
@@ -57,10 +88,7 @@ export default function GeneratedImagePage({ generatedImage }) {
             <button onClick={handleEmail}>Email</button>
             <button
               onClick={() =>
-                exportAsImage(
-                  exportRef.current,
-                  "ai-photobooth-freedom-fighter"
-                )
+                exportAsImage(exportRef.current, "ai-photobooth-wella")
               }
             >
               Download

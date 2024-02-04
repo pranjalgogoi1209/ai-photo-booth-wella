@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import logo from "./../../../assets/logo.png";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import select from "./../../../assets/select.png";
+import {
+  maleCardsActual,
+  femaleCardsActual,
+} from "../../../utils/constantsActual";
+import { Link } from "react-router-dom";
 
 export default function AvatarMobile({
   maleCards,
@@ -11,6 +15,7 @@ export default function AvatarMobile({
   selectedGender,
   handleSubmit,
   setSelectedImage,
+  generatedImage,
 }) {
   const [cards, setCards] = useState();
 
@@ -38,12 +43,27 @@ export default function AvatarMobile({
 
   cards && console.log(cards);
 
+  // filtering card image with actual image
+  const filterActualImg = index => {
+    if (selectedGender.toLowerCase() === "female") {
+      const filteredActualImgArr = femaleCardsActual.filter(
+        (actualImg, ActualIndex) => ActualIndex === index
+      );
+      return filteredActualImgArr[0];
+    } else if (selectedGender.toLowerCase() === "male") {
+      const filteredActualImgArr = maleCardsActual.filter(
+        (actualImg, ActualIndex) => ActualIndex === index
+      );
+      return filteredActualImgArr[0];
+    }
+  };
+
   return (
     <AvatarMobileWrapper>
       <header>
-        <div className="logo">
+        <Link to={"/"} className="logo">
           <img src={logo} alt="logo" />
-        </div>
+        </Link>
         <h1>Select Your Avatar</h1>
       </header>
 
@@ -57,8 +77,10 @@ export default function AvatarMobile({
               setSelectedImageIndex(index);
               console.log("img", src);
               var img = new Image();
-              img.src = src;
+              const actualImg = filterActualImg(index);
+              img.src = actualImg;
               img.onload = () => {
+                console.log("actual+>", actualImg);
                 setSelectedImage(getImageData(img));
               };
             }}
